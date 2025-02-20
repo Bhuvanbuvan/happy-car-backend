@@ -1,10 +1,13 @@
 const mongoose = require('mongoose');
 
 const UserSchema=new mongoose.Schema({
-    mobile:{
+    email :{
         type:String,
         required:true,
         unique:true,
+    },
+    mobile:{
+        type:String,                
     },
     otp:{
         type:String,
@@ -12,6 +15,10 @@ const UserSchema=new mongoose.Schema({
     otpExpires:{
         type:Date
     },
+    name :{
+        type:String,        
+    },
+    
 },);
 
 module.exports=mongoose.model("User",UserSchema);
